@@ -1,14 +1,20 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FiMail, FiGithub, FiLinkedin, FiDownload } from 'react-icons/fi';
 import { slideUp } from '@/utils/animations';
 
+const CONFIG = {
+    enableResumeDownload: false, // Set to false to disable download button
+};
+
 export default function Contact() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+    const [showDisabledTooltip, setShowDisabledTooltip] = useState(false);
 
     const socialLinks = [
         {
@@ -25,9 +31,9 @@ export default function Contact() {
         },
         {
             name: 'LinkedIn',
-            href: 'https://linkedin.com/in/gedewahyusedana',
+            href: 'https://linkedin.com/in/igedewahyusedana',
             icon: FiLinkedin,
-            label: 'linkedin.com/in/gedewahyusedana',
+            label: 'linkedin.com/in/igedewahyusedana',
         },
     ];
 
@@ -68,15 +74,36 @@ export default function Contact() {
                     </div>
 
                     {/* Download CV Button */}
-                    <div className="text-center mb-12">
-                        <a
-                            href="/cv.pdf"
-                            download
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent)] text-white rounded-lg font-medium hover:opacity-90 transition-all hover:scale-105"
-                        >
-                            <FiDownload size={18} />
-                            Download CV
-                        </a>
+                    <div className="text-center mb-12 relative inline-block w-full">
+                        {CONFIG.enableResumeDownload ? (
+                            <a
+                                href="/resume-igedewahyusedana.pdf"
+                                download
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent)] text-white rounded-lg font-medium hover:opacity-90 transition-all hover:scale-105"
+                            >
+                                <FiDownload size={18} />
+                                Download CV
+                            </a>
+                        ) : (
+                            <div
+                                className="relative inline-block group"
+                                onMouseEnter={() => setShowDisabledTooltip(true)}
+                                onMouseLeave={() => setShowDisabledTooltip(false)}
+                            >
+                                <button
+                                    disabled
+                                    className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--text-secondary)]/30 text-[var(--text-secondary)] rounded-lg font-medium cursor-not-allowed"
+                                >
+                                    <FiDownload size={18} />
+                                    Download CV
+                                </button>
+                                {showDisabledTooltip && (
+                                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[var(--text)] text-[var(--bg)] text-xs rounded-md shadow-lg whitespace-nowrap z-10">
+                                        Currently unavailable
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
 
                     {/* Footer */}
