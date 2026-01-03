@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
+import { FiArrowRight } from 'react-icons/fi';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { professionalProjects, academicProjects } from '@/data/projects';
 import { staggerContainer, staggerItem } from '@/utils/animations';
@@ -10,6 +12,14 @@ import { staggerContainer, staggerItem } from '@/utils/animations';
 export default function Projects() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+    // Filter featured projects, limit to 3
+    const featuredProfessional = professionalProjects
+        .filter(p => p.featured)
+        .slice(0, 3);
+    const featuredAcademic = academicProjects
+        .filter(p => p.featured)
+        .slice(0, 3);
 
     return (
         <section id="projects" className="py-20 px-6 bg-[var(--surface)]">
@@ -37,7 +47,7 @@ export default function Projects() {
                             Professional Experience
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {professionalProjects.map((project) => (
+                            {featuredProfessional.map((project) => (
                                 <motion.div key={project.id} variants={staggerItem}>
                                     <ProjectCard
                                         {...project}
@@ -49,6 +59,7 @@ export default function Projects() {
                         </div>
                     </div>
 
+
                     {/* Academic & Personal Projects */}
                     <div>
                         <h3 className="text-xl font-semibold text-[var(--text)] mb-6 flex items-center gap-2">
@@ -56,15 +67,27 @@ export default function Projects() {
                             Academic & Personal Projects
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {academicProjects.map((project) => (
+                            {featuredAcademic.map((project) => (
                                 <motion.div key={project.id} variants={staggerItem}>
                                     <ProjectCard {...project} variant="academic" />
                                 </motion.div>
                             ))}
                         </div>
                     </div>
+
+                    {/* CTA to View All Projects */}
+                    <div className="mt-12 text-center">
+                        <Link
+                            href="/projects"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+                        >
+                            View All Projects <FiArrowRight />
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
         </section>
     );
 }
+
+

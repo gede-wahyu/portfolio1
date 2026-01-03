@@ -3,6 +3,7 @@ export const professionalProjects = [
   {
     id: 'prof-1',
     title: 'Inventory Management System',
+    featured: true,
     company: 'CV Omah IT — Client Project',
     role: 'Frontend Developer',
     highlights: 'Contributed to an inventory system designed to replace manual workflows and improve operational visibility.',
@@ -23,6 +24,7 @@ export const professionalProjects = [
   {
     id: 'prof-2',
     title: 'Inventory & Distribution System',
+    featured: true,
     company: 'CV Omah IT — Client Project',
     role: 'Frontend Developer',
     highlights: 'Worked on an extended inventory system with production and distribution modules including product tracking.',
@@ -43,6 +45,7 @@ export const professionalProjects = [
   {
     id: 'prof-3',
     title: 'ERP Sales Module',
+    featured: true,
     company: 'PT Mitra Inti Bersama',
     role: 'Frontend Developer',
     highlights: 'Contributed to sales modules within an enterprise ERP system, integrating with multiple backend services.',
@@ -67,6 +70,7 @@ export const academicProjects = [
   {
     id: 'acad-1',
     title: 'Veelo Dashboard Starter',
+    featured: true,
     company: 'Personal Project',
     role: 'Frontend Project',
     highlights: 'A modern, customizable dashboard template built with Nuxt 3 and a component-based architecture.',
@@ -82,6 +86,7 @@ export const academicProjects = [
   {
     id: 'acad-2',
     title: 'Phishing Website Detection with Rough Set Models',
+    featured: true,
     company: 'Academic Project',
     role: 'Intelligent System Coursework',
     highlights: 'An experimental study investigating how discretization strategies influence decision boundaries and rule complexity.',
@@ -98,6 +103,7 @@ export const academicProjects = [
   {
     id: 'acad-3',
     title: 'Feature-Based vs Deep Learning Image Classification',
+    featured: true,
     company: 'Academic Project',
     role: 'Intelligent System Coursework',
     highlights: 'A comparative study analyzing differences in feature representation between classical ML and deep learning.',
