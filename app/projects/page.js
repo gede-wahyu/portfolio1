@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -15,7 +15,8 @@ const filters = [
     { key: 'academic', label: 'Academic & Personal' },
 ];
 
-export default function ProjectsPage() {
+// Inner component that uses useSearchParams (requires Suspense)
+function ProjectsContent() {
     const searchParams = useSearchParams();
     const initialFilter = searchParams.get('filter') || 'all';
     const [activeFilter, setActiveFilter] = useState(initialFilter);
@@ -65,8 +66,8 @@ export default function ProjectsPage() {
                                 key={key}
                                 onClick={() => setActiveFilter(key)}
                                 className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${activeFilter === key
-                                        ? 'bg-[var(--accent)] text-white'
-                                        : 'text-[var(--text-secondary)] hover:bg-[var(--surface)] hover:text-[var(--text)]'
+                                    ? 'bg-[var(--accent)] text-white'
+                                    : 'text-[var(--text-secondary)] hover:bg-[var(--surface)] hover:text-[var(--text)]'
                                     }`}
                             >
                                 {label}
@@ -107,5 +108,18 @@ export default function ProjectsPage() {
                 )}
             </div>
         </main>
+    );
+}
+
+// Main page component with Suspense boundary (required for static export)
+export default function ProjectsPage() {
+    return (
+        <Suspense fallback={
+            <main className="min-h-screen bg-[var(--bg)] flex items-center justify-center">
+                <div className="text-[var(--text-secondary)]">Loading projects...</div>
+            </main>
+        }>
+            <ProjectsContent />
+        </Suspense>
     );
 }
