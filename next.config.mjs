@@ -6,6 +6,9 @@ const nextConfig = {
   // Set base path to your repository name (update if different)
   basePath: '/portfolio1',
 
+  // Asset prefix for static files (images, etc.)
+  assetPrefix: '/portfolio1',
+
   // Enable React strict mode for better debugging
   reactStrictMode: true,
 

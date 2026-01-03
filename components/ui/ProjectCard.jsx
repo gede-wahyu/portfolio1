@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Badge from './Badge';
 import ProjectDetailModal from './ProjectDetailModal';
+import { getAssetPath } from '@/utils/basePath';
 
 export default function ProjectCard({
     title,
@@ -56,7 +57,7 @@ export default function ProjectCard({
                     <div className="relative aspect-video bg-gradient-to-br from-[var(--accent)]/10 to-[var(--accent)]/5 overflow-hidden">
                         {!imageError ? (
                             <Image
-                                src={coverImage.src}
+                                src={getAssetPath(coverImage.src)}
                                 alt={coverImage.alt || 'Project cover'}
                                 fill
                                 className="object-cover"

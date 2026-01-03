@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronLeft, FiChevronRight, FiGithub, FiExternalLink } from 'react-icons/fi';
 import Badge from './Badge';
+import { getAssetPath } from '@/utils/basePath';
 
 export default function ProjectDetailModal({
     project,
@@ -198,7 +199,7 @@ export default function ProjectDetailModal({
                                         >
                                             {!imageErrors[currentImageIndex] ? (
                                                 <Image
-                                                    src={images[currentImageIndex]?.src}
+                                                    src={getAssetPath(images[currentImageIndex]?.src)}
                                                     alt={images[currentImageIndex]?.alt || 'Project image'}
                                                     fill
                                                     className="object-contain"
@@ -253,8 +254,8 @@ export default function ProjectDetailModal({
                                                 key={index}
                                                 onClick={() => setCurrentImageIndex(index)}
                                                 className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex
-                                                        ? 'bg-[var(--accent)] scale-125'
-                                                        : 'bg-[var(--text-secondary)]/40 ring-1 ring-[var(--text-secondary)]/20 hover:bg-[var(--text-secondary)]/60'
+                                                    ? 'bg-[var(--accent)] scale-125'
+                                                    : 'bg-[var(--text-secondary)]/40 ring-1 ring-[var(--text-secondary)]/20 hover:bg-[var(--text-secondary)]/60'
                                                     }`}
                                                 aria-label={`View image ${index + 1}`}
                                             />

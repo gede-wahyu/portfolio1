@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { staggerContainer, staggerItem } from '@/utils/animations';
+import { getAssetPath } from '@/utils/basePath';
 
 export default function Hero() {
     const scrollToProjects = () => {
@@ -70,7 +71,7 @@ export default function Hero() {
                     >
                         <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent)]/5 border-2 border-[var(--text-secondary)]/10">
                             <Image
-                                src="/images/profile.JPG"
+                                src={getAssetPath("/images/profile.JPG")}
                                 alt="I Gede Wahyu Sedana"
                                 fill
                                 className="object-cover"
