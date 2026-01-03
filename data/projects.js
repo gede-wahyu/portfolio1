@@ -78,7 +78,7 @@ export const academicProjects = [
     details: 'The template includes a modular layout architecture with dynamic theme switching (dark/light mode), configurable color presets, and reusable UI components. Built with Pinia for state management and VueUse utilities for enhanced reactivity, providing a solid foundation for portfolio websites and admin dashboards.',
     tech: ['Nuxt 3', 'Vue 3', 'TailwindCSS', 'PrimeVue', 'Pinia'],
     images: [
-      { src: '/images/projects/acad-3.png', alt: 'Veelo dashboard starter' },
+      { src: '/images/projects/acad-1-veelo.png', alt: 'Veelo dashboard starter' },
     ],
     githubUrl: null,
     demoUrl: null,
