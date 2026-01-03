@@ -1,0 +1,117 @@
+// Professional Experience
+export const professionalProjects = [
+  {
+    id: 'prof-1',
+    title: 'Inventory Management System',
+    company: 'CV Omah IT — Client Project',
+    role: 'Frontend Developer',
+    highlights: 'Contributed to an inventory system designed to replace manual workflows and improve operational visibility.',
+    description: 'Contributed to the frontend development of an inventory management system designed to replace manual, spreadsheet-based workflows and improve day-to-day operational visibility.',
+    contributions: [
+      'Designed and implemented user-friendly frontend interfaces',
+      'Integrated frontend components with backend services via APIs',
+      'Focused on usability for non-technical users transitioning from manual systems',
+      'Collaborated with the team to iteratively refine features based on client feedback',
+    ],
+    tech: ['Web Application', 'Front End', 'REST APIs', 'Microservices', 'Vue 3', 'Javascript', 'Responsive UI'],
+    images: [
+      { src: '/images/projects/prof-1-lori.png', alt: 'Inventory dashboard interface' },
+    ],
+    githubUrl: null,
+    demoUrl: null,
+  },
+  {
+    id: 'prof-2',
+    title: 'Inventory & Distribution System',
+    company: 'CV Omah IT — Client Project',
+    role: 'Frontend Developer',
+    highlights: 'Worked on an extended inventory system with production and distribution modules including product tracking.',
+    description: 'Worked on an extended inventory system that includes production and distribution modules with product tracking and reporting capabilities.',
+    contributions: [
+      'Built frontend views for production tracking and distribution flows',
+      'Implemented clear and readable sales reporting interfaces',
+      'Ensured smooth data flow between frontend and backend services via REST APIs',
+      'Supported modular frontend development aligned with microservice architecture',
+    ],
+    tech: ['Web Application', 'Front End', 'REST APIs', 'Microservices', 'Vue 3', 'Javascript', 'Responsive UI'],
+    images: [
+      { src: '/images/projects/prof-2-dandang.png', alt: 'Distribution dashboard' },
+    ],
+    githubUrl: null,
+    demoUrl: null,
+  },
+  {
+    id: 'prof-3',
+    title: 'ERP Sales Module',
+    company: 'PT Mitra Inti Bersama',
+    role: 'Frontend Developer',
+    highlights: 'Contributed to sales modules within an enterprise ERP system, integrating with multiple backend services.',
+    description: 'Contributed to sales-related modules within an enterprise ERP system, collaborating within a multidisciplinary team and integrating with multiple backend services.',
+    contributions: [
+      'Developed and maintained frontend components for sales and reporting',
+      'Ensured responsive design and consistent UI behavior',
+      'Integrated UI components with backend services using RESTful APIs',
+      'Participated in code reviews and iterative improvements',
+    ],
+    tech: ['Web Application', 'Front End', 'REST APIs', 'Microservices', 'Vue 3', 'Javascript', 'Responsive UI'],
+    images: [
+      { src: '/images/projects/prof-3-mib.png', alt: 'ERP sales dashboard' },
+    ],
+    githubUrl: null,
+    demoUrl: null,
+  },
+];
+
+// Academic & Personal Projects
+export const academicProjects = [
+  {
+    id: 'acad-1',
+    title: 'Veelo Dashboard Starter',
+    company: 'Personal Project',
+    role: 'Frontend Project',
+    highlights: 'A modern, customizable dashboard template built with Nuxt 3 and a component-based architecture.',
+    description: 'A personal portfolio and dashboard starter template leveraging Nuxt 3 with Vue 3 Composition API. The project features a custom layout system with vertical navigation, theme customization, and responsive design using TailwindCSS and PrimeVue.',
+    details: 'The template includes a modular layout architecture with dynamic theme switching (dark/light mode), configurable color presets, and reusable UI components. Built with Pinia for state management and VueUse utilities for enhanced reactivity, providing a solid foundation for portfolio websites and admin dashboards.',
+    tech: ['Nuxt 3', 'Vue 3', 'TailwindCSS', 'PrimeVue', 'Pinia'],
+    images: [
+      { src: '/images/projects/acad-3.png', alt: 'Veelo dashboard starter' },
+    ],
+    githubUrl: null,
+    demoUrl: null,
+  },
+  {
+    id: 'acad-2',
+    title: 'Phishing Website Detection with Rough Set Models',
+    company: 'Academic Project',
+    role: 'Intelligent System Coursework',
+    highlights: 'An experimental study investigating how discretization strategies influence decision boundaries and rule complexity.',
+    description: 'An experimental study on phishing website detection using classical Rough Set Theory and a fuzzy similarity–based rough set approximation. The project focuses on how discretization strategies influence decision boundaries, rule complexity, and uncertainty representation rather than proposing a new detection algorithm.',
+    details: 'All methods were evaluated under a unified experimental protocol using the same dataset and metrics. The results highlight trade-offs between classification performance, rule transparency, and uncertainty-aware decision behavior.',
+    tech: ['Interpretable AI', 'Rough Set Theory', 'Python', 'Fuzzy Systems', 'Feature Discretization', 'Uncertainty Modeling', 'Experimental Evaluation'],
+    images: [
+      { src: '/images/projects/acad-2/result-1.jpg', alt: 'Rule complexity and interpretability analysis in classical rough set models' },
+      { src: '/images/projects/acad-2/result-2.jpg', alt: 'Classification performance comparison across rough set-based methods' },
+    ],
+    githubUrl: null,
+    demoUrl: null,
+  },
+  {
+    id: 'acad-3',
+    title: 'Feature-Based vs Deep Learning Image Classification',
+    company: 'Academic Project',
+    role: 'Intelligent System Coursework',
+    highlights: 'A comparative study analyzing differences in feature representation between classical ML and deep learning.',
+    description: 'A comparative study of classical machine learning and deep learning approaches for sheep face image classification. The project analyzes differences in feature representation, learning mechanisms, and interpretability between feature-based models and convolutional neural networks.',
+    details: 'Experimental results show that the deep learning approach achieved higher generalization performance, while the feature-based model offered clearer interpretability and transparency.',
+    tech: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'Image Classification', 'Support Vector Machine', 'Convolutional Neural Network', 'Transfer Learning', 'Feature Engineering', 'Python', 'TensorFlow', 'Keras', 'Scikit-learn'],
+    images: [
+      { src: '/images/projects/acad-3/feature-extraction.jpg', alt: 'Feature extraction output' },
+      { src: '/images/projects/acad-3/svm-evaluation.jpg', alt: 'SVM evaluation results' },
+      { src: '/images/projects/acad-3/cnn-training-dynamics.jpg', alt: 'CNN training dynamics' },
+      { src: '/images/projects/acad-3/cnn-evaluation.jpg', alt: 'CNN evaluation results' },
+      { src: '/images/projects/acad-3/cnn-feat-viz-marino.png', alt: 'CNN feature visualization' },
+    ],
+    githubUrl: 'https://github.com/gede-wahyu/sheep-face-classification-ml-dl',
+    demoUrl: null,
+  },
+];
